@@ -1,5 +1,5 @@
-# openknowledge-skills
+# Open Knowledge Skills
 
-Agent Skills for [Open Knowledge](https://github.com/inkeep/open-knowledge), installable via [skills.sh](https://skills.sh).
+An open source repository for Open Knowledge skills.
 
-This repository is populated and kept in sync automatically by the Inkeep OSS mirror. Content lands with the first sync.
+The skills catalog is intentionally empty while the repository is being set up.
