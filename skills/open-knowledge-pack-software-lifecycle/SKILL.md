@@ -1,0 +1,44 @@
+---
+name: open-knowledge-pack-software-lifecycle
+version: "0.18.0"
+description: "How to work in a Software Lifecycle project (the `software-lifecycle` starter pack): proposals → decisions → specs → postmortems, plus guides. Read when the project has these folders. Carries the doc lifecycle, status flows, and per-folder agent behaviors so that guidance does not live inside template bodies or folder descriptions. Complements the platform `open-knowledge` skill; does not replace it."
+compatibility: "Claude Code, Claude Desktop, Claude Cowork, Claude.ai web. Requires OpenKnowledge MCP server. Installed project-local by `ok seed --pack software-lifecycle`."
+metadata:
+  pack: "software-lifecycle"
+  author: "Inkeep"
+  repository: "https://github.com/inkeep/open-knowledge"
+---
+# Software Lifecycle pack — how to work here
+
+This project holds the doc lifecycle for an engineering team or OSS project. The flow is **proposals → decisions → specs → postmortems**, with **guides** as the how-to bucket. This skill holds the workflow so templates and folder descriptions stay clean.
+
+> This is pack guidance. The platform `open-knowledge` skill still governs every markdown operation.
+
+## The flow
+
+```
+proposals/    in-flight RFC-shape design proposals
+   ↓ accepted
+decisions/    frozen ADRs (the record of what was decided)
+   ↓ derived
+specs/        implementation specs for accepted proposals
+   ↓ when things break
+postmortems/  blameless incident write-ups
+guides/       how-to / onboarding / runbooks (referenced throughout)
+```
+
+## Per-folder rules + agent behaviors
+
+**`proposals/`** — One file per proposal (`0001-feature-name.md`). Status flows `draft → fcp → accepted/rejected`. An accepted proposal graduates to a record in `decisions/`. Shape: Motivation / Design / Drawbacks / Alternatives / Unresolved questions. *Agent: when a proposal sits at `status: draft` more than 14 days, surface it for the author to advance, park, or close.*
+
+**`decisions/`** — Architecture Decision Records (MADR / Nygard shape). Frozen once accepted. One file per decision (`NNNN-title.md`); status `proposed/accepted/deprecated/superseded`. A new decision that supersedes an older one links back via `Supersedes:`. *Agent: on a new decision, scan existing records touching the same subsystem and surface `Supersedes:` candidates before commit.*
+
+**`specs/`** — Implementation specs derived from accepted proposals. Prefer the `github/spec-kit` shape: one folder per spec (`specs/NNN-name/`) with `spec.md` + `plan.md` + `tasks.md` (the pack ships all three templates). References the parent proposal. *Agent: when a spec moves to `status: shipped`, suggest a postmortem template if the owner reports an incident in the spec's subsystem.*
+
+**`postmortems/`** — Blameless incident write-ups, one file per incident (`YYYY-MM-DD-name.md`): Summary / Timeline / Root cause / What went well / Action items (Google SRE shape). *Agent: surface a `Related:` block linking prior postmortems that share subsystems.*
+
+**`guides/`** — How-to guides, onboarding docs, and service-bound runbooks (Diátaxis how-to). Ships `guide`, `onboarding-guide`, and `runbook` templates. Carries `last_verified` so stale guides surface in periodic reviews. *Agent: when a postmortem is published, scan its action items for guide-shaped follow-ups and stub a guide pre-filled with the symptom and timeline excerpt.*
+
+## Templates
+
+Create docs with `write({ document: { path, template: "<name>" } })`. Templates carry only structure (headings + frontmatter scaffold); what each section is for is described above, not repeated in the document body.
