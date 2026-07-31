@@ -1,0 +1,101 @@
+{
+  "name": "open-knowledge-skills",
+  "owner": {
+    "name": "Inkeep",
+    "url": "https://github.com/inkeep"
+  },
+  "metadata": {
+    "description": "Agent Skills for working inside OpenKnowledge projects."
+  },
+  "//grouping": "One plugin per pack (plus the platform + meta skills) so a whole pack installs with `/plugin install <pack>@open-knowledge-skills`. A decomposed pack lists its orientation skill plus every scenario skill it ships — the plugin IS the pack boundary. skills.sh itself lists every skill flat; this grouping is the Claude Code /plugin channel.",
+  "plugins": [
+    {
+      "name": "open-knowledge",
+      "description": "Platform skill: teaches an agent to work in an OpenKnowledge project (MCP reads/writes, grounding, linking, live preview).",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/open-knowledge"]
+    },
+    {
+      "name": "write-skill",
+      "description": "Author a well-triggered SKILL.md for OpenKnowledge or your editors.",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/open-knowledge-write-skill"]
+    },
+    {
+      "name": "discovery",
+      "description": "What OpenKnowledge is and how to set it up on a repository (ok init / ok cowork / OK Desktop) — discovery and install guidance, no MCP required.",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/open-knowledge-discovery"]
+    },
+    {
+      "name": "codebase-wiki",
+      "description": "Work in a Codebase Wiki project: an agent-authored, source-grounded wiki of the surrounding codebase.",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/open-knowledge-pack-codebase-wiki"]
+    },
+    {
+      "name": "knowledge-base",
+      "description": "Work in a source-grounded Knowledge Base: external-sources -> research -> articles.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/open-knowledge-pack-knowledge-base",
+        "./skills/open-knowledge-pack-knowledge-base-research",
+        "./skills/open-knowledge-pack-knowledge-base-consolidate"
+      ]
+    },
+    {
+      "name": "entity-vault",
+      "description": "Work in a Personal CRM / typed-entity vault (people, companies, meetings, concepts; GBrain-compatible).",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/open-knowledge-pack-entity-vault"]
+    },
+    {
+      "name": "software-lifecycle",
+      "description": "Work in a Software Lifecycle project: proposals -> decisions -> specs -> postmortems, plus guides.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/open-knowledge-pack-software-lifecycle",
+        "./skills/open-knowledge-pack-software-lifecycle-frame-a-proposal",
+        "./skills/open-knowledge-pack-software-lifecycle-write-a-spec",
+        "./skills/open-knowledge-pack-software-lifecycle-record-a-decision",
+        "./skills/open-knowledge-pack-software-lifecycle-write-a-postmortem",
+        "./skills/open-knowledge-pack-software-lifecycle-review-a-design"
+      ]
+    },
+    {
+      "name": "writing-pipeline",
+      "description": "Work in a Writing Pipeline project: ideas -> drafts -> published.",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/open-knowledge-pack-writing-pipeline"]
+    },
+    {
+      "name": "worldbuilding",
+      "description": "Work in a Worldbuilding project: a fiction encyclopedia of characters, settings, factions, and lore.",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/open-knowledge-pack-worldbuilding"]
+    },
+    {
+      "name": "okf",
+      "description": "Work in an OKF project: a knowledge base conformant with Google's Open Knowledge Format from commit one.",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/open-knowledge-pack-okf"]
+    },
+    {
+      "name": "plain-notes",
+      "description": "Work in a Plain Notes project: a flat notes/ folder plus a daily journal.",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/open-knowledge-pack-plain-notes"]
+    }
+  ]
+}

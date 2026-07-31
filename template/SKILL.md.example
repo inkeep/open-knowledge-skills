@@ -1,0 +1,25 @@
+---
+name: my-skill-name
+description: "Use when <situation> — <what this skill makes the agent do>. Write this as a routing rule, not a title: it is the field both skills.sh and the host agent match on. Name the trigger conditions explicitly."
+compatibility: "Claude Code, Claude Desktop, Cursor, Codex. Requires the OpenKnowledge MCP server for markdown operations."
+metadata:
+  author: "Your Name"
+  repository: "https://github.com/inkeep/open-knowledge-skills"
+---
+
+# My Skill Name
+
+One or two sentences on what this project/workflow is and what the agent's job is here.
+
+## When this applies
+
+Read when the project has <folders / files / signals>.
+
+## Conventions
+
+- Rule 1
+- Rule 2
+
+## Workflow
+
+Step-by-step behavior the agent should follow.
