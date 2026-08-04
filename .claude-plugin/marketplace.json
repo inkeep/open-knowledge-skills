@@ -7,35 +7,43 @@
   "metadata": {
     "description": "Agent Skills for working inside OpenKnowledge projects."
   },
-  "//grouping": "One plugin per pack (plus the platform + meta skills) so a whole pack installs with `/plugin install <pack>@open-knowledge-skills`. A decomposed pack lists its orientation skill plus every scenario skill it ships — the plugin IS the pack boundary. skills.sh itself lists every skill flat; this grouping is the Claude Code /plugin channel.",
+  "//grouping": "One plugin per pack (plus the platform + meta skills) so a whole pack installs with `/plugin install <pack>@open-knowledge-skills`. A decomposed pack lists its orientation skill plus every scenario skill it ships \u2014 the plugin IS the pack boundary. skills.sh itself lists every skill flat by its leaf name; this grouping is the Claude Code /plugin channel. On disk the mirror nests by role: skills/core/<name> for the platform + meta skills, skills/starter-packs/<pack>/<name> for pack skills (each pack folder also carries a README).",
   "plugins": [
     {
       "name": "open-knowledge",
       "description": "Platform skill: teaches an agent to work in an OpenKnowledge project (MCP reads/writes, grounding, linking, live preview).",
       "source": "./",
       "strict": false,
-      "skills": ["./skills/open-knowledge"]
+      "skills": [
+        "./skills/core/open-knowledge"
+      ]
     },
     {
       "name": "write-skill",
       "description": "Author a well-triggered SKILL.md for OpenKnowledge or your editors.",
       "source": "./",
       "strict": false,
-      "skills": ["./skills/open-knowledge-write-skill"]
+      "skills": [
+        "./skills/core/open-knowledge-write-skill"
+      ]
     },
     {
       "name": "discovery",
-      "description": "What OpenKnowledge is and how to set it up on a repository (ok init / ok cowork / OK Desktop) — discovery and install guidance, no MCP required.",
+      "description": "What OpenKnowledge is and how to set it up on a repository (ok init / ok cowork / OK Desktop) \u2014 discovery and install guidance, no MCP required.",
       "source": "./",
       "strict": false,
-      "skills": ["./skills/open-knowledge-discovery"]
+      "skills": [
+        "./skills/core/open-knowledge-discovery"
+      ]
     },
     {
       "name": "codebase-wiki",
       "description": "Work in a Codebase Wiki project: an agent-authored, source-grounded wiki of the surrounding codebase.",
       "source": "./",
       "strict": false,
-      "skills": ["./skills/open-knowledge-pack-codebase-wiki"]
+      "skills": [
+        "./skills/starter-packs/codebase-wiki/codebase-wiki"
+      ]
     },
     {
       "name": "knowledge-base",
@@ -43,17 +51,19 @@
       "source": "./",
       "strict": false,
       "skills": [
-        "./skills/open-knowledge-pack-knowledge-base",
-        "./skills/open-knowledge-pack-knowledge-base-research",
-        "./skills/open-knowledge-pack-knowledge-base-consolidate"
+        "./skills/starter-packs/knowledge-base/knowledge-base",
+        "./skills/starter-packs/knowledge-base/research-with-sources",
+        "./skills/starter-packs/knowledge-base/consolidate-notes"
       ]
     },
     {
-      "name": "entity-vault",
+      "name": "personal-crm",
       "description": "Work in a Personal CRM / typed-entity vault (people, companies, meetings, concepts; GBrain-compatible).",
       "source": "./",
       "strict": false,
-      "skills": ["./skills/open-knowledge-pack-entity-vault"]
+      "skills": [
+        "./skills/starter-packs/personal-crm/personal-crm"
+      ]
     },
     {
       "name": "software-lifecycle",
@@ -61,41 +71,92 @@
       "source": "./",
       "strict": false,
       "skills": [
-        "./skills/open-knowledge-pack-software-lifecycle",
-        "./skills/open-knowledge-pack-software-lifecycle-frame-a-proposal",
-        "./skills/open-knowledge-pack-software-lifecycle-write-a-spec",
-        "./skills/open-knowledge-pack-software-lifecycle-record-a-decision",
-        "./skills/open-knowledge-pack-software-lifecycle-write-a-postmortem",
-        "./skills/open-knowledge-pack-software-lifecycle-review-a-design"
+        "./skills/starter-packs/software-lifecycle/software-lifecycle",
+        "./skills/starter-packs/software-lifecycle/frame-a-proposal",
+        "./skills/starter-packs/software-lifecycle/write-a-spec",
+        "./skills/starter-packs/software-lifecycle/record-a-decision",
+        "./skills/starter-packs/software-lifecycle/write-a-postmortem",
+        "./skills/starter-packs/software-lifecycle/review-a-design"
       ]
     },
     {
-      "name": "writing-pipeline",
+      "name": "writing-workflow",
       "description": "Work in a Writing Pipeline project: ideas -> drafts -> published.",
       "source": "./",
       "strict": false,
-      "skills": ["./skills/open-knowledge-pack-writing-pipeline"]
+      "skills": [
+        "./skills/starter-packs/writing-workflow/writing-workflow"
+      ]
     },
     {
       "name": "worldbuilding",
       "description": "Work in a Worldbuilding project: a fiction encyclopedia of characters, settings, factions, and lore.",
       "source": "./",
       "strict": false,
-      "skills": ["./skills/open-knowledge-pack-worldbuilding"]
+      "skills": [
+        "./skills/starter-packs/worldbuilding/worldbuilding"
+      ]
     },
     {
-      "name": "okf",
+      "name": "okf-knowledge-base",
       "description": "Work in an OKF project: a knowledge base conformant with Google's Open Knowledge Format from commit one.",
       "source": "./",
       "strict": false,
-      "skills": ["./skills/open-knowledge-pack-okf"]
+      "skills": [
+        "./skills/starter-packs/okf-knowledge-base/okf-knowledge-base"
+      ]
     },
     {
-      "name": "plain-notes",
+      "name": "note-taking",
       "description": "Work in a Plain Notes project: a flat notes/ folder plus a daily journal.",
       "source": "./",
       "strict": false,
-      "skills": ["./skills/open-knowledge-pack-plain-notes"]
+      "skills": [
+        "./skills/starter-packs/note-taking/note-taking"
+      ]
+    },
+    {
+      "name": "entity-vault",
+      "description": "OUTDATED \u2014 renamed to `personal-crm`. Kept so an existing `/plugin install entity-vault@open-knowledge-skills` keeps resolving; it installs the same skill as `personal-crm`. Install `personal-crm` instead; this entry is removed in a later release.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/starter-packs/personal-crm/personal-crm"
+      ]
+    },
+    {
+      "name": "okf",
+      "description": "OUTDATED \u2014 renamed to `okf-knowledge-base`. Kept so an existing `/plugin install okf@open-knowledge-skills` keeps resolving; it installs the same skill as `okf-knowledge-base`. Install `okf-knowledge-base` instead; this entry is removed in a later release.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/starter-packs/okf-knowledge-base/okf-knowledge-base"
+      ]
+    },
+    {
+      "name": "plain-notes",
+      "description": "OUTDATED \u2014 renamed to `note-taking`. Kept so an existing `/plugin install plain-notes@open-knowledge-skills` keeps resolving; it installs the same skill as `note-taking`. Install `note-taking` instead; this entry is removed in a later release.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/starter-packs/note-taking/note-taking"
+      ]
+    },
+    {
+      "name": "writing-pipeline",
+      "description": "OUTDATED \u2014 renamed to `writing-workflow`. Kept so an existing `/plugin install writing-pipeline@open-knowledge-skills` keeps resolving; it installs the same skill as `writing-workflow`. Install `writing-workflow` instead; this entry is removed in a later release.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/starter-packs/writing-workflow/writing-workflow"
+      ]
     }
-  ]
+  ],
+  "//deprecated": "OUTDATED plugin handles kept for one release so pre-rename `/plugin install <old>@open-knowledge-skills` keeps resolving. Each installs the same skills as the entry that replaced it; the map below is old -> replacement. Remove both the map and the aliased entries once the campaign has cycled.",
+  "//deprecatedPlugins": {
+    "entity-vault": "personal-crm",
+    "okf": "okf-knowledge-base",
+    "plain-notes": "note-taking",
+    "writing-pipeline": "writing-workflow"
+  }
 }
