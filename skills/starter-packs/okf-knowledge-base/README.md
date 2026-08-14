@@ -1,8 +1,8 @@
 # OKF Knowledge Base (okf)
 
-An OpenKnowledge starter pack for projects conformant with Google's Open
-Knowledge Format from commit one: `concepts/`, `references/`, and `notes/`
-folders, each with typed frontmatter and its own template.
+Guidance for creating, reading, and maintaining Open Knowledge Format v0.2
+bundles. It explains the portable format's core rules, authoring judgments, and
+the optional OpenKnowledge `okf` plugin.
 
 The pack's seed id is `okf`; the skill it ships is named `okf-knowledge-base`.
 
@@ -10,7 +10,7 @@ The pack's seed id is `okf`; the skill it ships is named `okf-knowledge-base`.
 
 | Skill | What it does |
 |---|---|
-| `okf-knowledge-base` | How to keep the project conformant: which folder a new doc belongs in, the `type` frontmatter each folder requires, and how the templates keep hand-set metadata out of the workflow. |
+| `okf-knowledge-base` | OKF v0.2 structure, metadata, provenance, links, indexes, logs, and the value of the `okf` plugin. |
 
 ## Install
 
