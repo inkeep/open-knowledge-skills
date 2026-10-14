@@ -12,5 +12,5 @@ code changes rather than rotting beside it.
 
 ## Install
 
-- Seed a project: `ok seed --pack codebase-wiki`
+- Seed a project: `ok seed --pack codebase-wiki` (`ok-beta` for Beta)
 - Claude Code plugin: `/plugin install codebase-wiki@open-knowledge-skills`

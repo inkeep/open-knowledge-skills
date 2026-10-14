@@ -12,5 +12,5 @@ changes around it.
 
 ## Install
 
-- Seed a project: `ok seed --pack worldbuilding`
+- Seed a project: `ok seed --pack worldbuilding` (`ok-beta` for Beta)
 - Claude Code plugin: `/plugin install worldbuilding@open-knowledge-skills`

@@ -13,5 +13,5 @@ The pack's seed id is `writing-pipeline`; the skill it ships is named
 
 ## Install
 
-- Seed a project: `ok seed --pack writing-pipeline`
+- Seed a project: `ok seed --pack writing-pipeline` (`ok-beta` for Beta)
 - Claude Code plugin: `/plugin install writing-workflow@open-knowledge-skills`

@@ -24,5 +24,5 @@ scenario instead of improvising a document type.
 
 ## Install
 
-- Seed a project (folders, templates, and all six skills): `ok seed --pack software-lifecycle`
+- Seed a project (folders, templates, and all six skills): `ok seed --pack software-lifecycle` (`ok-beta` for Beta)
 - Claude Code plugin (all six skills): `/plugin install software-lifecycle@open-knowledge-skills`
