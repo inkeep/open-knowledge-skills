@@ -14,5 +14,5 @@ The pack's seed id is `okf`; the skill it ships is named `okf-knowledge-base`.
 
 ## Install
 
-- Seed a project: `ok seed --pack okf`
+- Seed a project: `ok seed --pack okf` (`ok-beta` for Beta)
 - Claude Code plugin: `/plugin install okf-knowledge-base@open-knowledge-skills`

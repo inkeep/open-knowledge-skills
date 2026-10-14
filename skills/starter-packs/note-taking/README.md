@@ -13,7 +13,7 @@ ships is named `note-taking`.
 
 ## Install
 
-- Seed a project (folders, templates, and the skill together): `ok seed --pack plain-notes`
+- Seed a project (folders, templates, and the skill together): `ok seed --pack plain-notes` (`ok-beta` for Beta)
 - Claude Code plugin: `/plugin install note-taking@open-knowledge-skills`
 
 The skill assumes the pack's folder layout exists, so seeding is the primary

@@ -15,5 +15,5 @@ The pack's seed id is `entity-vault`; the skill it ships is named
 
 ## Install
 
-- Seed a project: `ok seed --pack entity-vault`
+- Seed a project: `ok seed --pack entity-vault` (`ok-beta` for Beta)
 - Claude Code plugin: `/plugin install personal-crm@open-knowledge-skills`

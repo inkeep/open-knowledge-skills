@@ -21,5 +21,5 @@ skill exists so an agent picks the right one instead of improvising.
 
 ## Install
 
-- Seed a project (folders, templates, and all three skills): `ok seed --pack knowledge-base`
+- Seed a project (folders, templates, and all three skills): `ok seed --pack knowledge-base` (`ok-beta` for Beta)
 - Claude Code plugin (all three skills): `/plugin install knowledge-base@open-knowledge-skills`
